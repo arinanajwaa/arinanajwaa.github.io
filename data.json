@@ -9,7 +9,7 @@
     "phone": "+62 812-2572-2447",
     "photo": "images/profil.jpg",
     "social": {
-      "github": "https://github.com/username",
+      "github": "https://github.com/arinanajwaa",
       "linkedin": "https://linkedin.com/in/username",
       "instagram": "https://instagram.com/arnjw"
     },
@@ -55,15 +55,22 @@
    
   ],
   "education": [
-    {
+     {
       "degree": "Pendidikan Terakhir Kamu",
-      "institution": "Nama Sekolah/Kampus",
-      "year": "20XX - 20XX",
+      "institution": "POLITEKNIK NEGERI SEMARANG",
+      "year": "2023 - 2026",
       "description": "Fokus studi pada sistem elektronika dan instrumentasi."
     }
+    {
+      "degree": "Pendidikan Terakhir Kamu",
+      "institution": "SMK NEGERI 1 SEMARANG",
+      "year": "2020 - 2023",
+      "description": "Fokus studi pada sistem industri."
+    }
+   
   ],
   "certificates": [
-    { "title": "Sertifikat Contoh 1", "issuer": "Penerbit Sertifikat", "year": "20XX" },
-    { "title": "Sertifikat Contoh 2", "issuer": "Penerbit Sertifikat", "year": "20XX" }
+    { "title": "BNSP Automasi Industri", "issuer": "Penerbit Sertifikat", "year": "2025" }
+    
   ]
 }
