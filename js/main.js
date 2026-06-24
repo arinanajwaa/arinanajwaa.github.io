@@ -1,214 +1,156 @@
-// ===========================
-// LOAD DATA & RENDER
-// ===========================
-async function loadPortfolioData() {
-  try {
-    const res = await fetch("data.json");
-    if (!res.ok) throw new Error("Gagal memuat data.json");
-    const data = await res.json();
-    renderProfile(data.profile);
-    renderSkills(data.skills);
-    renderProjects(data.projects);
-    renderEducation(data.education);
-    renderCertificates(data.certificates);
-  } catch (err) {
-    console.error(err);
-  }
-}
-
-function renderProfile(profile) {
-  if (!profile) return;
-
-  setText("heroName", profile.name);
-  setText("heroTagline", profile.tagline);
-  setText("aboutText", profile.about);
-  setText("factLocation", profile.location);
-  setText("factEmail", profile.email);
-  setText("factPhone", profile.phone);
-  setText("factTitle", profile.title);
-  setText("footerText", `© ${new Date().getFullYear()} ${profile.name} — dibuat dengan ❤ dan sedikit solder.`);
-
-  document.title = `${profile.name} | Portofolio Elektronika`;
-
-  const heroPhoto = document.getElementById("heroPhoto");
-  if (heroPhoto && profile.photo) heroPhoto.src = profile.photo;
-
-  // CV download links
-  ["downloadCvBtn", "downloadCvBtn2"].forEach((id) => {
-    const el = document.getElementById(id);
-    if (el && profile.cv) {
-      el.href = profile.cv;
-      el.setAttribute("download", "");
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Mengatur Tahun Otomatis di Footer
+    const yearSpan = document.getElementById('current-year');
+    if (yearSpan) {
+        yearSpan.innerText = new Date().getFullYear();
     }
-  });
 
-  // Email button
-  const emailBtn = document.getElementById("emailBtn");
-  if (emailBtn && profile.email) {
-    emailBtn.href = `mailto:${profile.email}`;
-  }
-
-  // Social row
-  const socialRow = document.getElementById("socialRow");
-  if (socialRow && profile.social) {
-    const icons = { github: "GH", linkedin: "in", instagram: "IG" };
-    socialRow.innerHTML = Object.entries(profile.social)
-      .map(([key, url]) => {
-        const label = icons[key] || key.slice(0, 2).toUpperCase();
-        return `<a href="${url}" target="_blank" rel="noopener noreferrer" aria-label="${key}">${label}</a>`;
-      })
-      .join("");
-  }
-}
-
-function renderSkills(skills) {
-  const grid = document.getElementById("skillsGrid");
-  if (!grid || !Array.isArray(skills)) return;
-
-  grid.innerHTML = skills
-    .map(
-      (skill) => `
-      <div class="skill-card reveal" data-category="${skill.category}">
-        <div class="skill-top">
-          <span>${skill.name}</span>
-          <span class="pct">${skill.level}%</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-fill" data-level="${skill.level}"></div>
-        </div>
-      </div>
-    `
-    )
-    .join("");
-}
-
-function renderProjects(projects) {
-  const grid = document.getElementById("projectsGrid");
-  if (!grid || !Array.isArray(projects)) return;
-
-  grid.innerHTML = projects
-    .map(
-      (p) => `
-      <article class="project-card reveal">
-        <div class="project-thumb">
-          <img src="${p.image}" alt="Thumbnail proyek ${p.title}" loading="lazy">
-        </div>
-        <div class="project-body">
-          <h3>${p.title}</h3>
-          <p>${p.description}</p>
-          <div class="tag-row">
-            ${p.tags.map((t) => `<span class="tag">${t}</span>`).join("")}
-          </div>
-        </div>
-      </article>
-    `
-    )
-    .join("");
-}
-
-function renderEducation(education) {
-  const list = document.getElementById("educationList");
-  if (!list || !Array.isArray(education)) return;
-
-  list.innerHTML = education
-    .map(
-      (e) => `
-      <div class="timeline-item reveal">
-        <h3>${e.degree}</h3>
-        <div class="meta">${e.institution} · ${e.year}</div>
-        <p>${e.description}</p>
-      </div>
-    `
-    )
-    .join("");
-}
-
-function renderCertificates(certificates) {
-  const list = document.getElementById("certList");
-  if (!list || !Array.isArray(certificates)) return;
-
-  list.innerHTML = certificates
-    .map(
-      (c, i) => `
-      <div class="cert-item reveal">
-        <div class="cert-icon">${String(i + 1).padStart(2, "0")}</div>
-        <div>
-          <h3>${c.title}</h3>
-          <div class="meta">${c.issuer} · ${c.year}</div>
-        </div>
-      </div>
-    `
-    )
-    .join("");
-}
-
-function setText(id, value) {
-  const el = document.getElementById(id);
-  if (el && value !== undefined) el.textContent = value;
-}
-
-// ===========================
-// NAVBAR TOGGLE (MOBILE)
-// ===========================
-function initNavToggle() {
-  const toggle = document.getElementById("navToggle");
-  const links = document.getElementById("navLinks");
-  if (!toggle || !links) return;
-
-  toggle.addEventListener("click", () => {
-    const isOpen = links.classList.toggle("open");
-    toggle.setAttribute("aria-expanded", String(isOpen));
-  });
-
-  links.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      links.classList.remove("open");
-      toggle.setAttribute("aria-expanded", "false");
-    });
-  });
-}
-
-// ===========================
-// SCROLL REVEAL
-// ===========================
-function initScrollReveal() {
-  const items = document.querySelectorAll(".reveal");
-  if (!items.length) return;
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-
-          // Trigger skill bar fill animation when visible
-          const fill = entry.target.querySelector(".skill-fill");
-          if (fill && !fill.dataset.filled) {
-            fill.style.width = `${fill.dataset.level}%`;
-            fill.dataset.filled = "true";
-          }
-
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
-
-  items.forEach((item) => observer.observe(item));
-}
-
-// Re-observe newly rendered .reveal elements after data loads
-function refreshRevealObserver() {
-  // Small delay to ensure DOM has rendered
-  setTimeout(initScrollReveal, 50);
-}
-
-// ===========================
-// INIT
-// ===========================
-document.addEventListener("DOMContentLoaded", async () => {
-  initNavToggle();
-  await loadPortfolioData();
-  refreshRevealObserver();
+    // 2. Mengambil Data dari data.json
+    fetch('data.json') // Ganti menjadi 'js/data.json' jika file JSON ada di dalam folder js
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Gagal memuat file JSON (Status: ${response.status})`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            renderProfile(data.profile);
+            renderSkills(data.profile.skills); // Mengambil array skills dari dalam profile
+            renderEducation(data.education);
+            renderExperience(data.experience);
+            renderProjects(data.projects);
+        })
+        .catch(error => {
+            console.error('Waduh, ada error saat memuat data:', error);
+        });
 });
+
+// === FUNGSI UNTUK MERENDER DATA KE HTML ===
+
+// 1. Render Profil
+function renderProfile(profile) {
+    if (!profile) return;
+    
+    document.getElementById('profile-name').innerText = profile.name;
+    document.getElementById('profile-description').innerText = profile.description;
+    document.getElementById('profile-email').innerText = profile.email;
+    document.getElementById('profile-phone').innerText = profile.phone;
+    document.getElementById('profile-pic').src = profile.profile_pic;
+    
+    const cvBtn = document.getElementById('cv-download');
+    if (cvBtn) cvBtn.href = profile.cv_url;
+
+    // Render Media Sosial
+    const socialContainer = document.getElementById('social-links');
+    if (socialContainer && profile.social_links) {
+        socialContainer.innerHTML = '';
+        profile.social_links.forEach(soc => {
+            socialContainer.innerHTML += `
+                <a href="${soc.url}" target="_blank" title="${soc.platform}">
+                    <i class="${soc.icon}"></i>
+                </a>
+            `;
+        });
+    }
+}
+
+// 2. Render Kehlian (Skills)
+function renderSkills(skills) {
+    const skillsGrid = document.getElementById('skills-grid');
+    if (!skillsGrid || !skills) return;
+
+    skillsGrid.innerHTML = '';
+    skills.forEach(skill => {
+        skillsGrid.innerHTML += `
+            <div class="skill-item">
+                <i class="fas fa-check-circle" style="color: #007bff; margin-right: 8px;"></i>
+                <span>${skill}</span>
+            </div>
+        `;
+    });
+}
+
+// 3. Render Edukasi
+function renderEducation(educationList) {
+    const eduContainer = document.getElementById('education-list');
+    if (!eduContainer || !educationList) return;
+
+    eduContainer.innerHTML = '';
+    educationList.forEach(edu => {
+        eduContainer.innerHTML += `
+            <div class="education-item" style="margin-bottom: 25px; border-left: 3px solid #007bff; padding-left: 15px;">
+                <h3 style="margin: 0 0 5px 0; color: #333;">${edu.degree}</h3>
+                <h4 style="margin: 0 0 5px 0; color: #555; font-weight: 600;">${edu.institution}</h4>
+                <span class="period" style="font-size: 0.9rem; color: #888; display: block; margin-bottom: 8px;">
+                    <i class="fas fa-calendar-alt"></i> ${edu.period}
+                </span>
+                <p style="margin: 0; color: #666; line-height: 1.5;">${edu.description}</p>
+            </div>
+        `;
+    });
+}
+
+// 4. Render Pengalaman & Sertifikasi
+function renderExperience(experienceList) {
+    const expContainer = document.getElementById('experience-list');
+    if (!expContainer || !experienceList) return;
+
+    expContainer.innerHTML = '';
+    experienceList.forEach(exp => {
+        // Membuat list untuk tugas/keterangan pekerjaan jika ada
+        let tasksHTML = '';
+        if (exp.tasks && exp.tasks.length > 0) {
+            tasksHTML = `<ul style="margin: 8px 0 0 0; padding-left: 20px; color: #666; line-height: 1.5;">`;
+            exp.tasks.forEach(task => {
+                tasksHTML += `<li>${task}</li>`;
+            });
+            tasksHTML += `</ul>`;
+        }
+
+        expContainer.innerHTML += `
+            <div class="experience-item" style="margin-bottom: 25px; border-left: 3px solid #28a745; padding-left: 15px;">
+                <h3 style="margin: 0 0 5px 0; color: #333;">${exp.role}</h3>
+                <h4 style="margin: 0 0 5px 0; color: #555; font-weight: 600;">${exp.company}</h4>
+                <span class="period" style="font-size: 0.9rem; color: #888; display: block; margin-bottom: 8px;">
+                    <i class="fas fa-calendar-alt"></i> ${exp.period}
+                </span>
+                ${tasksHTML}
+            </div>
+        `;
+    });
+}
+
+// 5. Render Proyek
+function renderProjects(projectList) {
+    const projectGrid = document.getElementById('projects-grid');
+    if (!projectGrid || !projectList) return;
+
+    projectGrid.innerHTML = '';
+    projectList.forEach(proj => {
+        // Membuat badge komponen/teknologi (tags)
+        let tagsHTML = '';
+        if (proj.tech_stack) {
+            tagsHTML = proj.tech_stack.map(tag => `
+                <span class="tag" style="display:inline-block; background:#e9ecef; color:#495057; padding: 3px 10px; border-radius:15px; font-size:0.8rem; margin: 0 5px 5px 0;">
+                    ${tag}
+                </span>
+            `).join('');
+        }
+
+        projectGrid.innerHTML += `
+            <div class="project-card" style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 20px;">
+                <img src="${proj.image}" alt="${proj.title}" style="width: 100%; height: 200px; object-fit: cover; background: #f8f9fa;">
+                <div class="project-info" style="padding: 20px;">
+                    <h3 style="margin: 0 0 10px 0; color:#333;">${proj.title}</h3>
+                    <p style="color:#666; font-size:0.95rem; line-height:1.5; margin-bottom: 15px;">${proj.description}</p>
+                    <div class="project-tags" style="margin-bottom: 15px;">
+                        ${tagsHTML}
+                    </div>
+                    <a href="${proj.link}" class="project-link" style="color: #007bff; text-decoration: none; font-weight: bold; font-size: 0.9rem;">
+                        Lihat Proyek <i class="fas fa-arrow-right" style="font-size: 0.8rem;"></i>
+                    </a>
+                </div>
+            </div>
+        `;
+    });
+}
