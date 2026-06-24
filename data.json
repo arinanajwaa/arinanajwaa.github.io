@@ -13,7 +13,7 @@
       "linkedin": "https://linkedin.com/in/username",
       "instagram": "https://instagram.com/arnjw"
     },
-    "cv": "documents/CV-placeholder.pdf"
+    "cv": "documents/CV-Nama-Kamu.pdf"
   },
   "skills": [
     { "name": "Mikrokontroler (Arduino/ESP32)", "level": 85, "category": "hardware" },
