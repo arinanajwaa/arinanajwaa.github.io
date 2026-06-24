@@ -60,7 +60,7 @@
     }
   ],
   "certificates": [
-    { "title": "Sertifikat Contoh 1", "issuer": "Penerbit Sertifikat", "year": "20XX" },
-    { "title": "Sertifikat Contoh 2", "issuer": "Penerbit Sertifikat", "year": "20XX" }
+    { "title": "BNSP Otomasi Industri", "issuer": "Penerbit Sertifikat", "year": "2025" },
+  
   ]
 }
