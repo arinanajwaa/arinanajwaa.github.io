@@ -1,129 +1,105 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portofolio Elektronika</title>
-  <meta name="description" content="Portofolio personal di bidang elektronika — proyek, skill, dan CV.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arina Najwaa Rihhadatul Aisy - Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <header>
+        <nav class="sidebar-nav">
+			<ul>
+				<li>
+					<a href="#profile" data-tooltip="Profil">
+						<i class="fas fa-user"></i>
+						<span class="nav-text">Profil</span>
+					</a>
+				</li>
+				<li>
+					<a href="#education" data-tooltip="Edukasi">
+						<i class="fas fa-graduation-cap"></i>
+						<span class="nav-text">Edukasi</span>
+					</a>
+				</li>
+				<li>
+					<a href="#experience" data-tooltip="Pengalaman">
+						<i class="fas fa-briefcase"></i>
+						<span class="nav-text">Pengalaman & Sertifikasi</span>
+					</a>
+				</li>
+				<li>
+					<a href="#projects" data-tooltip="Proyek">
+						<i class="fas fa-tools"></i>
+						<span class="nav-text">Riset & Proyek</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+    </header>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="nav-inner">
-      <a href="#home" class="logo"><span class="dot"></span>portfolio.dev</a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about">Tentang</a></li>
-        <li><a href="#skills">Skill</a></li>
-        <li><a href="#projects">Proyek</a></li>
-        <li><a href="#education">Pendidikan</a></li>
-        <li><a href="#contact">Kontak</a></li>
-      </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
+    <main>
+        <section id="profile" class="section">
+			<div class="container">
+				<div class="profile-content">
+					<div class="profile-image-container">
+						<img id="profile-pic" src="images/profile-placeholder.svg" alt="Arina Najwaa Rihhadatul Aisy" class="profile-image">
+						<div class="profile-contact">
+							<p><i class="fas fa-envelope"></i> <span id="profile-email">najwaaarina@gmail.com</span></p>
+							<p><i class="fas fa-phone"></i> <span id="profile-phone">+62 812-2572-2447</span></p>
+							<div class="social-links" id="social-links">
+                                </div>
+							<a href="documents/CV-placeholder.pdf" id="cv-download" class="cv-download-btn" title="Unduh CV" target="_blank">
+								<i class="fas fa-file-pdf"></i> Unduh CV
+							</a>
+						</div>
+					</div>
+					<div class="profile-info">
+						<h1 id="profile-name">Arina Najwaa Rihhadatul Aisy</h1>
+                        <h2 style="font-size: 14pt; color: #555; margin-top: -5px; font-weight: normal;">Electronics Engineer</h2>
+					    <p id="profile-description">Halo! Aku seorang penggiat elektronika yang suka membongkar, merakit, dan memahami cara kerja rangkaian dari yang sederhana sampai yang kompleks. Bagiku, setiap komponen punya peran kecil yang ketika digabungkan, bisa jadi sesuatu yang besar dan bermanfaat.</p>
+    					
+						<div class="skills-container" id="skills-container">
+								<h3>Keahlian</h3>
+								<div class="skills-grid" id="skills-grid">
+                                    </div>
+							</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-  <!-- HERO -->
-  <header class="hero" id="home">
-    <div class="hero-inner">
-      <div>
-        <span class="eyebrow">hello_world.electronics</span>
-        <h1 class="hero-title" id="heroTitle">Hai, aku <span class="highlight" id="heroName">Nama Kamu</span></h1>
-        <p class="hero-tagline" id="heroTagline">Merangkai sirkuit, menyalakan ide.</p>
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">Lihat Proyek</a>
-          <a href="#" id="downloadCvBtn" class="btn btn-secondary" download>⬇ Download CV</a>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="chip-frame">
-          <img id="heroPhoto" src="images/profile-placeholder.svg" alt="Foto profil">
-          <div class="float-badge badge-1">● ONLINE</div>
-          <div class="float-badge badge-2">⚡ 5V LOGIC</div>
-        </div>
-      </div>
-    </div>
-  </header>
+        <section id="education" class="section">
+            <div class="container">
+                <h2>Edukasi</h2>
+                <div class="education-list" id="education-list">
+                    </div>
+            </div>
+        </section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <span class="eyebrow">tentang</span>
-    <h2>Kenalan Dulu, Yuk</h2>
-    <div class="about-grid">
-      <div class="about-text reveal">
-        <p id="aboutText">Memuat data...</p>
-      </div>
-      <div class="about-facts">
-        <div class="fact-card reveal">
-          <div class="label">Lokasi</div>
-          <div class="value" id="factLocation">-</div>
-        </div>
-        <div class="fact-card reveal">
-          <div class="label">Email</div>
-          <div class="value" id="factEmail">-</div>
-        </div>
-        <div class="fact-card reveal">
-          <div class="label">Telepon</div>
-          <div class="value" id="factPhone">-</div>
-        </div>
-        <div class="fact-card reveal">
-          <div class="label">Fokus</div>
-          <div class="value" id="factTitle">-</div>
-        </div>
-      </div>
-    </div>
-  </section>
+        <section id="experience" class="section">
+            <div class="container">
+                <h2>Pengalaman & Sertifikasi</h2>
+                <div class="experience-list" id="experience-list">
+                    </div>
+            </div>
+        </section>
 
-  <!-- SKILLS -->
-  <section id="skills">
-    <span class="eyebrow">keahlian</span>
-    <h2>Skill & Tools</h2>
-    <p class="section-sub">Kombinasi hardware, software, dan konsep yang aku pakai untuk membangun sistem elektronika.</p>
-    <div class="skills-grid" id="skillsGrid"></div>
-  </section>
+        <section id="projects" class="section">
+            <div class="container">
+                <h2>Riset dan Proyek</h2>
+                <div class="projects-grid" id="projects-grid">
+                    </div>
+            </div>
+        </section>
+    </main>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <span class="eyebrow">portofolio</span>
-    <h2>Proyek Pilihan</h2>
-    <p class="section-sub">Beberapa proyek yang pernah aku kerjakan, dari prototipe sederhana sampai sistem IoT.</p>
-    <div class="projects-grid" id="projectsGrid"></div>
-  </section>
+    <footer>
+        <p>&copy; <span id="current-year"></span> Arina Najwaa Rihhadatul Aisy Portfolio</p>
+    </footer>
 
-  <!-- EDUCATION & CERTIFICATES -->
-  <section id="education">
-    <span class="eyebrow">latar belakang</span>
-    <h2>Pendidikan & Sertifikat</h2>
-    <div class="edu-cert-grid">
-      <div id="educationList"></div>
-      <div class="cert-list" id="certList"></div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="contact-card reveal">
-      <div>
-        <h2>Mari Berkolaborasi</h2>
-        <p>Punya proyek elektronika yang ingin didiskusikan, atau sekadar mau ngobrol soal IoT dan rangkaian? Kirim pesan saja.</p>
-        <div class="contact-actions">
-          <a href="#" id="emailBtn" class="btn btn-primary">✉ Kirim Email</a>
-          <a href="#" id="downloadCvBtn2" class="btn btn-secondary" download>⬇ Download CV</a>
-        </div>
-      </div>
-      <div class="social-row" id="socialRow"></div>
-    </div>
-  </section>
-
-  <footer>
-    <p id="footerText">© 2026 Nama Kamu — dibuat dengan ❤ dan sedikit solder.</p>
-  </footer>
-
-  <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
