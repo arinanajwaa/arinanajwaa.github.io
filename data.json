@@ -21,7 +21,6 @@
     { "name": "Embedded C/C++", "level": 80, "category": "software" },
     { "name": "Sensor & Aktuator", "level": 90, "category": "hardware" },
     { "name": "Soldering & Prototyping", "level": 95, "category": "hardware" },
-    { "name": "Python (Data Logging)", "level": 70, "category": "software" },
     { "name": "Digital Signal Processing", "level": 65, "category": "concept" },
     { "name": "IoT & Komunikasi Wireless", "level": 78, "category": "concept" }
   ],
