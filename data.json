@@ -1,0 +1,66 @@
+{
+  "profile": {
+    "name": "Nama Kamu",
+    "title": "Electronics Engineer",
+    "tagline": "Merangkai sirkuit, menyalakan ide.",
+    "about": "Halo! Aku seorang penggiat elektronika yang suka membongkar, merakit, dan memahami cara kerja rangkaian dari yang sederhana sampai yang kompleks. Bagiku, setiap komponen punya peran kecil yang ketika digabungkan, bisa jadi sesuatu yang besar dan bermanfaat.",
+    "location": "Indonesia",
+    "email": "namakamu@email.com",
+    "phone": "+62 812-xxxx-xxxx",
+    "photo": "images/profile-placeholder.svg",
+    "social": {
+      "github": "https://github.com/username",
+      "linkedin": "https://linkedin.com/in/username",
+      "instagram": "https://instagram.com/username"
+    },
+    "cv": "documents/CV-placeholder.pdf"
+  },
+  "skills": [
+    { "name": "Mikrokontroler (Arduino/ESP32)", "level": 85, "category": "hardware" },
+    { "name": "PCB Design (KiCad/Eagle)", "level": 75, "category": "hardware" },
+    { "name": "Embedded C/C++", "level": 80, "category": "software" },
+    { "name": "Sensor & Aktuator", "level": 90, "category": "hardware" },
+    { "name": "Soldering & Prototyping", "level": 95, "category": "hardware" },
+    { "name": "Python (Data Logging)", "level": 70, "category": "software" },
+    { "name": "Digital Signal Processing", "level": 65, "category": "concept" },
+    { "name": "IoT & Komunikasi Wireless", "level": 78, "category": "concept" }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Smart Plant Monitor",
+      "description": "Sistem monitoring kelembaban tanah dan cahaya otomatis menggunakan ESP32, dengan dashboard realtime via Wi-Fi.",
+      "tags": ["ESP32", "IoT", "Sensor"],
+      "image": "images/project-1-placeholder.svg",
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "title": "Line Follower Robot",
+      "description": "Robot pengikut garis dengan algoritma PID untuk kestabilan gerak di lintasan kompetisi.",
+      "tags": ["Arduino", "PID Control", "Robotics"],
+      "image": "images/project-2-placeholder.svg",
+      "link": "#"
+    },
+    {
+      "id": 3,
+      "title": "Mini Power Bank Custom",
+      "description": "Rangkaian power bank custom dengan modul boost converter dan proteksi baterai 18650.",
+      "tags": ["PCB Design", "Power Electronics"],
+      "image": "images/project-3-placeholder.svg",
+      "link": "#"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Pendidikan Terakhir Kamu",
+      "institution": "Nama Sekolah/Kampus",
+      "year": "20XX - 20XX",
+      "description": "Fokus studi pada sistem elektronika dan instrumentasi."
+    }
+  ],
+  "certificates": [
+    { "title": "Sertifikat Contoh 1", "issuer": "Penerbit Sertifikat", "year": "20XX" },
+    { "title": "Sertifikat Contoh 2", "issuer": "Penerbit Sertifikat", "year": "20XX" }
+  ]
+}
