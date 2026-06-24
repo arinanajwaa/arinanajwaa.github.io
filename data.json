@@ -9,9 +9,9 @@
     "phone": "+62 812-2572-2447",
     "photo": "images/profil.jpg",
     "social": {
-      "github": "https://github.com/username",
+      "github": "https://github.com/arinanajwaa",
       "linkedin": "https://linkedin.com/in/username",
-      "instagram": "https://instagram.com/username"
+      "instagram": "https://instagram.com/arnjw"
     },
     "cv": "documents/CV-Arina Najwaa.pdf"
   },
@@ -42,25 +42,18 @@
       "image": "images/project-2-placeholder.svg",
       "link": "#"
     },
-    {
-      "id": 3,
-      "title": "Mini Power Bank Custom",
-      "description": "Rangkaian power bank custom dengan modul boost converter dan proteksi baterai 18650.",
-      "tags": ["PCB Design", "Power Electronics"],
-      "image": "images/project-3-placeholder.svg",
-      "link": "#"
-    }
+   
   ],
   "education": [
     {
       "degree": "Pendidikan Terakhir Kamu",
-      "institution": "Nama Sekolah/Kampus",
-      "year": "20XX - 20XX",
+      "institution": "Politeknik Negeri Semarang",
+      "year": "2023 - Now",
       "description": "Fokus studi pada sistem elektronika dan instrumentasi."
     }
   ],
   "certificates": [
-    { "title": "Sertifikat Contoh 1", "issuer": "Penerbit Sertifikat", "year": "20XX" },
-    { "title": "Sertifikat Contoh 2", "issuer": "Penerbit Sertifikat", "year": "20XX" }
+    { "title": "BNSP Otomasi Industri", "issuer": "Penerbit Sertifikat", "year": "2025" },
+   
   ]
 }
