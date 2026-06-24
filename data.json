@@ -44,15 +44,21 @@
     },
   ],
   "education": [
+     {
+      "degree": "Pendidikan Terakhir Kamu",
+      "institution": "SMK NEGERI 1 SEMARANG",
+      "year": "2020 - 2023",
+      "description": "Fokus studi pada sistem elektronika industri."
+    }
     {
       "degree": "Pendidikan Terakhir Kamu",
-      "institution": "Nama Sekolah/Kampus",
-      "year": "20XX - 20XX",
+      "institution": "Politeknik Negeri Semarang",
+      "year": "2023 - 2025",
       "description": "Fokus studi pada sistem elektronika dan instrumentasi."
     }
   ],
   "certificates": [
-    { "title": "Sertifikat Contoh 1", "issuer": "Penerbit Sertifikat", "year": "20XX" },
-    { "title": "Sertifikat Contoh 2", "issuer": "Penerbit Sertifikat", "year": "20XX" }
+    { "title": "BNSP Otomasi Industri", "issuer": "Penerbit Sertifikat", "year": "2025" },
+    
   ]
 }
