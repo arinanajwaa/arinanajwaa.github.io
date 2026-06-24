@@ -6,12 +6,12 @@
     "about": "Halo! Aku seorang penggiat elektronika yang suka membongkar, merakit, dan memahami cara kerja rangkaian dari yang sederhana sampai yang kompleks. Bagiku, setiap komponen punya peran kecil yang ketika digabungkan, bisa jadi sesuatu yang besar dan bermanfaat.",
     "location": "Indonesia",
     "email": "najwaaarina@gmail.com",
-    "phone": "+62 812-xxxx-xxxx",
+    "phone": "+62 812-2572-2447",
     "photo": "images/profile-placeholder.svg",
     "social": {
       "github": "https://github.com/username",
       "linkedin": "https://linkedin.com/in/username",
-      "instagram": "https://instagram.com/username"
+      "instagram": "https://instagram.com/arnjw"
     },
     "cv": "documents/CV-Nama-Kamu (1).pdf"
   },
@@ -26,30 +26,32 @@
   ],
   "projects": [
     {
-      "id": 1,
-      "title": "Smart Plant Monitor",
-      "description": "Sistem monitoring kelembaban tanah dan cahaya otomatis menggunakan ESP32, dengan dashboard realtime via Wi-Fi.",
-      "tags": ["ESP32", "IoT", "Sensor"],
-      "image": "images/project-1-placeholder.svg",
+          "id": 1,
+      "title": "KWH Meter Berbasis Internet of Things",
+      "description": "Alat ukur konsumsi listrik (KWH meter) pintar yang membaca tegangan, arus, dan daya secara real-time menggunakan sensor PZEM-004T V3, lalu mengirim datanya ke internet melalui ESP8266 sehingga bisa dipantau dari jarak jauh.",
+      "tags": [
+        "ESP8266",
+        "PZEM-004T V3",
+        "Blynk",
+        "IoT"
+      ],
+      "image": "images/project-1-kwh-meter.svg",
       "link": "#"
     },
     {
       "id": 2,
-      "title": "Line Follower Robot",
-      "description": "Robot pengikut garis dengan algoritma PID untuk kestabilan gerak di lintasan kompetisi.",
-      "tags": ["Arduino", "PID Control", "Robotics"],
-      "image": "images/project-2-placeholder.svg",
+      "title": "Sistem Kendali Kelembapan Ruangan Berbasis PID Diskrit",
+      "description": "Sistem kontrol otomatis untuk menjaga kelembapan ruangan pada titik setpoint menggunakan algoritma PID diskrit. Sensor DHT11 membaca kelembapan secara berkala, lalu Arduino Uno menghitung sinyal kontrol untuk menggerakkan aktuator.",
+      "tags": [
+        "Arduino Uno",
+        "DHT11",
+        "PID Diskrit",
+        "Kontrol Otomatis"
+      ],
+      "image": "images/project-2-pid-kelembapan.svg",
       "link": "#"
     },
-    {
-      "id": 3,
-      "title": "Mini Power Bank Custom",
-      "description": "Rangkaian power bank custom dengan modul boost converter dan proteksi baterai 18650.",
-      "tags": ["PCB Design", "Power Electronics"],
-      "image": "images/project-3-placeholder.svg",
-      "link": "#"
-    }
-  ],
+
   "education": [
     {
       "degree": "Pendidikan Terakhir Kamu",
