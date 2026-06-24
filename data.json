@@ -11,7 +11,7 @@
     "social": {
       "github": "https://github.com/username",
       "linkedin": "https://linkedin.com/in/username",
-      "instagram": "https://instagram.com/username"
+      "instagram": "https://instagram.com/arnjw"
     },
     "cv": "documents/CV-placeholder.pdf"
   },
@@ -42,14 +42,6 @@
       "image": "images/project-2-pid-kelembapan.svg",
       "link": "#"
     },
-    {
-      "id": 3,
-      "title": "Mini Power Bank Custom",
-      "description": "Rangkaian power bank custom dengan modul boost converter dan proteksi baterai 18650.",
-      "tags": ["PCB Design", "Power Electronics"],
-      "image": "images/project-3-placeholder.svg",
-      "link": "#"
-    }
   ],
   "education": [
     {
