@@ -7,13 +7,13 @@
     "location": "Kendal, Indonesia",
     "email": "najwaaarina@gmail.com",
     "phone": "+62 812-2572-2447",
-    "photo": "images/profile-placeholder.svg",
+    "photo": "images/profil.jpg",
     "social": {
       "github": "https://github.com/username",
       "linkedin": "https://linkedin.com/in/username",
       "instagram": "https://instagram.com/arnjw"
     },
-    "cv": "documents/CV-Nama-Kamu (1).pdf"
+    "cv": "documents/CV-Najwaa.pdf"
   },
   "skills": [
     { "name": "Mikrokontroler (Arduino/ESP32)", "level": 85, "category": "hardware" },
