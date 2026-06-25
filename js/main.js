@@ -105,6 +105,23 @@ function renderProjects(projects) {
     .join("");
 }
 
+function renderExperience(experience) {
+  const list = document.getElementById("experienceList");
+  if (!list || !Array.isArray(experience)) return;
+ 
+  list.innerHTML = `<div class="timeline">${experience
+    .map(
+      (e) => `
+      <div class="timeline-item reveal">
+        <h3>${e.role}</h3>
+        <div class="meta">${e.organization} · ${e.period}</div>
+        <p>${e.description}</p>
+      </div>
+    `
+    )
+    .join("")}</div>`;
+}
+
 function renderEducation(education) {
   const list = document.getElementById("educationList");
   if (!list || !Array.isArray(education)) return;
