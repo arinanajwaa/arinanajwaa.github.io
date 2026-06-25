@@ -2,7 +2,7 @@
   "profile": {
     "name": "Arina Najwaa Rihhadatul Aisy",
     "title": "Electronics Engineer",
-    "tagline": "Merangkai sirkuit, menyalakan ide",
+    "tagline": "Merangkai sirkuit, menyalakan ide.",
     "about": "Hello! I'm an Electronic Engineering student with a passion for electronic circuits, automation, and technology. I enjoy exploring how devices work, trying new things, and developing ideas into useful projects. I continue to learn and hone my skills in electronic system design, programming, and applying technology to solve various problems.",
     "location": "Kendal, Indonesia",
     "email": "najwaaarina@gmail.com",
@@ -10,7 +10,7 @@
     "photo": "images/profil.jpg",
     "social": {
       "github": "https://github.com/arinanajwaa",
-      "linkedin": "https://linkedin.com/in/username",
+      "linkedin": "https://linkedin.com/in/arina-najwaa",
       "instagram": "https://instagram.com/arnjw"
     },
     "cv": "documents/CV-Najwaa.pdf"
@@ -37,7 +37,7 @@
         "Blynk",
         "IoT"
       ],
-      "image": "images/project1.jpg",
+      "image": "images/project-1-kwh-meter.svg",
       "link": "#"
     },
     {
@@ -50,10 +50,10 @@
         "PID Diskrit",
         "Kontrol Otomatis"
       ],
-      "image": "images/project2.jpg",
+      "image": "images/project-2-pid-kelembapan.svg",
       "link": "#"
     },
-    {
+     {
       "id": 3,
       "title": "Prototype Water Level Berbasis Arduino",
       "description": "Prototipe pengukur tinggi permukaan air menggunakan sensor ultrasonik yang terhubung ke Arduino, dengan data ketinggian air ditampilkan dan dimonitor secara visual melalui LabVIEW.",
@@ -87,6 +87,9 @@
       "description": "Membantu tim engineering dalam pemeliharaan dan perbaikan sistem kelistrikan serta peralatan teknis di lingkungan hotel."
     }
   ],
+
+   
+
   "education": [
      {
       "degree": "POLITEKNIK NEGERI SEMARANG",
