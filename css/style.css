@@ -430,9 +430,7 @@ h2 {
   transition: width 1.1s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.skill-card[data-category="hardware"] .skill-fill { background: linear-gradient(90deg, var(--circuit-blue), #8B9CFF); }
-.skill-card[data-category="software"] .skill-fill { background: linear-gradient(90deg, var(--led-green), #2FB87E); }
-.skill-card[data-category="concept"] .skill-fill { background: linear-gradient(90deg, var(--led-pink), #FFB3C0); }
+
 
 /* ===========================
    PROJECTS
