@@ -65,7 +65,27 @@
       "image": "images/project3.jpg",
       "link": "#"
     }
-   
+    
+  ],
+  "experience": [
+    {
+      "role": "Magang — Divisi Quality Control",
+      "organization": "CV. Sarana Cipta Media",
+      "period": "September 2025 - Desember 2025",
+      "description": "Melakukan pemeriksaan dan pengendalian kualitas produk untuk memastikan standar mutu terpenuhi sebelum proses produksi selesai."
+    },
+    {
+      "role": "Pelatihan Desain & Manufaktur PCB",
+      "organization": "PT. Indomaker Indonesia Mandiri",
+      "period": "November 2024",
+      "description": "Mengikuti pelatihan intensif tentang proses desain layout PCB hingga manufaktur, mencakup tahapan dari skematik ke board jadi."
+    },
+    {
+      "role": "Magang — Divisi Engineering",
+      "organization": "Gumaya Tower Hotel",
+      "period": "Desember 2021 - Maret 2022",
+      "description": "Membantu tim engineering dalam pemeliharaan dan perbaikan sistem kelistrikan serta peralatan teknis di lingkungan hotel."
+    }
   ],
   "education": [
      {
