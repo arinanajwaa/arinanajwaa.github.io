@@ -52,8 +52,19 @@
       ],
       "image": "images/project2.jpg",
       "link": "#"
+    },
+    {
+      "id": 3,
+      "title": "Prototype Water Level Berbasis Arduino",
+      "description": "Prototipe pengukur tinggi permukaan air menggunakan sensor ultrasonik yang terhubung ke Arduino, dengan data ketinggian air ditampilkan dan dimonitor secara visual melalui LabVIEW.",
+      "tags": [
+        "Arduino",
+        "Sensor Ultrasonik",
+        "LabVIEW"
+      ],
+      "image": "images/project3.jpg",
+      "link": "#"
     }
-
    
   ],
   "education": [
