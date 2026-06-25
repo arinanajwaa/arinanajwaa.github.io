@@ -71,10 +71,10 @@ function renderSkills(skills) {
       <div class="skill-card reveal" data-category="${skill.category}">
         <div class="skill-top">
           <span>${skill.name}</span>
-          <span class="pct">${skill.level}%</span>
+          
         </div>
         <div class="skill-bar">
-          <div class="skill-fill" data-level="${skill.level}"></div>
+          
         </div>
       </div>
     `
