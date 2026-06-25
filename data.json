@@ -37,7 +37,7 @@
         "Blynk",
         "IoT"
       ],
-      "image": "images/project-1-kwh-meter.svg",
+      "image": "images/project1.jpg",
       "link": "#"
     },
     {
@@ -50,7 +50,7 @@
         "PID Diskrit",
         "Kontrol Otomatis"
       ],
-      "image": "images/project-2-pid-kelembapan.svg",
+      "image": "images/project2.jpg",
       "link": "#"
     }
 
