@@ -64,21 +64,29 @@ function renderProfile(profile) {
 function renderSkills(skills) {
   const grid = document.getElementById("skillsGrid");
   if (!grid || !Array.isArray(skills)) return;
-
-  grid.innerHTML = skills
-    .map(
-      (skill) => `
-      <div class="skill-card reveal" data-category="${skill.category}">
-        <div class="skill-top">
-          <span>${skill.name}</span>
-          <span class="pct">${skill.level}%</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-fill" data-level="${skill.level}"></div>
-        </div>
-      </div>
-    `
-    )
+ 
+  // Item tagline opsional (mis. {"tagline": "Technical & soft skills"}) tidak dirender sebagai skill
+  const items = skills.filter((s) => s && s.name);
+ 
+  grid.innerHTML = items
+    .map((skill) => {
+      // Mode lama: ada "level" (angka) -> tampil sebagai progress bar
+      if (typeof skill.level === "number") {
+        return `
+          <div class="skill-card reveal" data-category="${skill.category || "concept"}">
+            <div class="skill-top">
+              <span>${skill.name}</span>
+              <span class="pct">${skill.level}%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" data-level="${skill.level}"></div>
+            </div>
+          </div>
+        `;
+      }
+      // Mode baru: tanpa "level" -> tampil sebagai tag/pill sederhana
+      return `<span class="skill-tag reveal">${skill.name.trim()}</span>`;
+    })
     .join("");
 }
 function renderProjects(projects) {
