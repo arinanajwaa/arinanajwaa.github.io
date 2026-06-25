@@ -497,6 +497,31 @@ h2 {
 }
 
 /* ===========================
+   EXPERIENCE
+   =========================== */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+}
+
+.timeline .timeline-item {
+  background: var(--bg-card);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-md);
+  padding: 20px 22px;
+  border-left: 4px solid var(--circuit-blue);
+}
+
+.timeline .timeline-item:nth-child(2) {
+  border-left-color: var(--led-pink);
+}
+
+.timeline .timeline-item:nth-child(3) {
+  border-left-color: var(--led-green);
+}
+
+/* ===========================
    EDUCATION & CERTIFICATES
    =========================== */
 .edu-cert-grid {
