@@ -16,7 +16,7 @@
     "cv": "documents/CV-Najwaa.pdf"
   },
   "skills": [
-    {"tagline": "Technical & soft skills",}
+    {"tagline": "Technical & soft skills"},
     { "name": "Basic Electronics" },
     { "name": "Microcontroller" },
     { "name": "PCB Design-Proteus " },
