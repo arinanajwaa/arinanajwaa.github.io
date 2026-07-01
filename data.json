@@ -16,30 +16,24 @@
     "cv": "documents/CV-Najwaa.pdf"
   },
   "skills": [
-    {"tagline": "Technical & soft skills"},
-    { "name": "Basic Electronics" },
-    { "name": "Microcontroller" },
-    { "name": "PCB Design-Proteus " },
-    { "name": "PLC Programming-CX-Programmer " },
-    { "name": "Problem Solving" },
-    { "name": "Soldering & Prototyping" },
-    { "name": "Arduino IDE"},
-    { "name": "honest" },
-    { "name": "Teamwork" },
-    { "name": "Hardworking" },
-    { "name": "Disciplined" }
+    { "name": "Basic Electronics", "level": 90 },
+    { "name": "Microcontroller", "level": 85 },
+    { "name": "PCB Design - Proteus", "level": 80 },
+    { "name": "PLC Programming - CX-Programmer", "level": 75 },
+    { "name": "Problem Solving", "level": 88 },
+    { "name": "Soldering & Prototyping", "level": 85 },
+    { "name": "Arduino IDE", "level": 90 },
+    { "name": "Honest", "level": 95 },
+    { "name": "Teamwork", "level": 90 },
+    { "name": "Hardworking", "level": 92 },
+    { "name": "Disciplined", "level": 88 }
   ],
   "projects": [
     {
-            "id": 1,
+      "id": 1,
       "title": "KWH Meter Berbasis Internet of Things",
       "description": "Alat ukur konsumsi listrik (KWH meter) pintar yang membaca tegangan, arus, dan daya secara real-time menggunakan sensor PZEM-004T V3, lalu mengirim datanya ke internet melalui ESP8266 sehingga bisa dipantau dari jarak jauh.",
-      "tags": [
-        "ESP8266",
-        "PZEM-004T V3",
-        "Blynk",
-        "IoT"
-      ],
+      "tags": ["ESP8266", "PZEM-004T V3", "Blynk", "IoT"],
       "image": "images/project1.jpg",
       "link": "#"
     },
@@ -47,28 +41,18 @@
       "id": 2,
       "title": "Sistem Kendali Kelembapan Ruangan Berbasis PID Diskrit",
       "description": "Sistem kontrol otomatis untuk menjaga kelembapan ruangan pada titik setpoint menggunakan algoritma PID diskrit. Sensor DHT11 membaca kelembapan secara berkala, lalu Arduino Uno menghitung sinyal kontrol untuk menggerakkan aktuator.",
-      "tags": [
-        "Arduino Uno",
-        "DHT11",
-        "PID Diskrit",
-        "Kontrol Otomatis"
-      ],
+      "tags": ["Arduino Uno", "DHT11", "PID Diskrit", "Kontrol Otomatis"],
       "image": "images/project2.jpg",
       "link": "#"
     },
-     {
+    {
       "id": 3,
       "title": "Prototype Water Level Berbasis Arduino",
       "description": "Prototipe pengukur tinggi permukaan air menggunakan sensor ultrasonik yang terhubung ke Arduino, dengan data ketinggian air ditampilkan dan dimonitor secara visual melalui LabVIEW.",
-      "tags": [
-        "Arduino",
-        "Sensor Ultrasonik",
-        "LabVIEW"
-      ],
+      "tags": ["Arduino", "Sensor Ultrasonik", "LabVIEW"],
       "image": "images/project3.jpg",
       "link": "#"
     }
-    
   ],
   "experience": [
     {
@@ -90,11 +74,8 @@
       "description": "Membantu tim engineering dalam pemeliharaan dan perbaikan sistem kelistrikan serta peralatan teknis di lingkungan hotel."
     }
   ],
-
-   
-
   "education": [
-     {
+    {
       "degree": "POLITEKNIK NEGERI SEMARANG",
       "institution": "2023 - 2026",
       "year": "",
@@ -106,10 +87,8 @@
       "year": "",
       "description": "Industrial Electronics Engineering"
     }
-   
   ],
   "certificates": [
     { "title": "BNSP Automasi Industri", "issuer": "Penerbit Sertifikat", "year": "2025" }
-    
   ]
 }
