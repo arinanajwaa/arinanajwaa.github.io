@@ -9,6 +9,7 @@ async function loadPortfolioData() {
     renderProfile(data.profile);
     renderSkills(data.skills);
     renderProjects(data.projects);
+    renderExperience(data.experience);
     renderEducation(data.education);
     renderCertificates(data.certificates);
   } catch (err) {
@@ -33,7 +34,6 @@ function renderProfile(profile) {
   const heroPhoto = document.getElementById("heroPhoto");
   if (heroPhoto && profile.photo) heroPhoto.src = profile.photo;
 
-  // CV download links
   ["downloadCvBtn", "downloadCvBtn2"].forEach((id) => {
     const el = document.getElementById(id);
     if (el && profile.cv) {
@@ -42,13 +42,11 @@ function renderProfile(profile) {
     }
   });
 
-  // Email button
   const emailBtn = document.getElementById("emailBtn");
   if (emailBtn && profile.email) {
     emailBtn.href = `mailto:${profile.email}`;
   }
 
-  // Social row
   const socialRow = document.getElementById("socialRow");
   if (socialRow && profile.social) {
     const icons = { github: "GH", linkedin: "in", instagram: "IG" };
@@ -64,31 +62,46 @@ function renderProfile(profile) {
 function renderSkills(skills) {
   const grid = document.getElementById("skillsGrid");
   if (!grid || !Array.isArray(skills)) return;
- 
-  // Item tagline opsional (mis. {"tagline": "Technical & soft skills"}) tidak dirender sebagai skill
-  const items = skills.filter((s) => s && s.name);
- 
-  grid.innerHTML = items
-    .map((skill) => {
-      // Mode lama: ada "level" (angka) -> tampil sebagai progress bar
-      if (typeof skill.level === "number") {
-        return `
-          <div class="skill-card reveal" data-category="${skill.category || "concept"}">
-            <div class="skill-top">
-              <span>${skill.name}</span>
-              <span class="pct">${skill.level}%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-fill" data-level="${skill.level}"></div>
-            </div>
-          </div>
-        `;
-      }
-      // Mode baru: tanpa "level" -> tampil sebagai tag/pill sederhana
-      return `<span class="skill-tag reveal">${skill.name.trim()}</span>`;
-    })
+
+  grid.innerHTML = skills
+    .filter((skill) => skill.name)
+    .map(
+      (skill, i) => `
+      <div class="skill-card" style="transition-delay: ${i * 60}ms">
+        <span class="skill-dot"></span>
+        <span>${skill.name}</span>
+      </div>
+    `
+    )
+    .join("");
+
+  // Trigger staggered pop-in animation
+  requestAnimationFrame(() => {
+    setTimeout(() => {
+      grid.querySelectorAll(".skill-card").forEach((card) => {
+        card.classList.add("is-visible");
+      });
+    }, 100);
+  });
+}
+
+function renderExperience(experience) {
+  const list = document.getElementById("experienceList");
+  if (!list || !Array.isArray(experience)) return;
+
+  list.innerHTML = experience
+    .map(
+      (e) => `
+      <div class="timeline-item reveal">
+        <h3>${e.role}</h3>
+        <div class="meta">${e.organization} · ${e.period}</div>
+        <p>${e.description}</p>
+      </div>
+    `
+    )
     .join("");
 }
+
 function renderProjects(projects) {
   const grid = document.getElementById("projectsGrid");
   if (!grid || !Array.isArray(projects)) return;
@@ -111,23 +124,6 @@ function renderProjects(projects) {
     `
     )
     .join("");
-}
-
-function renderExperience(experience) {
-  const list = document.getElementById("experienceList");
-  if (!list || !Array.isArray(experience)) return;
- 
-  list.innerHTML = `<div class="timeline">${experience
-    .map(
-      (e) => `
-      <div class="timeline-item reveal">
-        <h3>${e.role}</h3>
-        <div class="meta">${e.organization} · ${e.period}</div>
-        <p>${e.description}</p>
-      </div>
-    `
-    )
-    .join("")}</div>`;
 }
 
 function renderEducation(education) {
@@ -205,7 +201,6 @@ function initScrollReveal() {
         if (entry.isIntersecting) {
           entry.target.classList.add("is-visible");
 
-          // Trigger skill bar fill animation when visible
           const fill = entry.target.querySelector(".skill-fill");
           if (fill && !fill.dataset.filled) {
             fill.style.width = `${fill.dataset.level}%`;
@@ -222,9 +217,7 @@ function initScrollReveal() {
   items.forEach((item) => observer.observe(item));
 }
 
-// Re-observe newly rendered .reveal elements after data loads
 function refreshRevealObserver() {
-  // Small delay to ensure DOM has rendered
   setTimeout(initScrollReveal, 50);
 }
 
