@@ -27,7 +27,7 @@ function renderProfile(profile) {
   setText("factEmail", profile.email);
   setText("factPhone", profile.phone);
   setText("factTitle", profile.title);
-  setText("footerText", `© ${new Date().getFullYear()} ${profile.name} — Electronic Engineering.`);
+  setText("footerText", `© ${new Date().getFullYear()} ${profile.name} — Electronic Engineering ❤`);
 
   document.title = `${profile.name} | Portofolio Elektronika`;
 
